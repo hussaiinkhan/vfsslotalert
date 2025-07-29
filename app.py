@@ -7,8 +7,8 @@ from telegram import Bot
 import asyncio
 
 # === Configuration ===
-VFS_URL = "https://visa.vfsglobal.com/tur/en/pol/book-an-appointment"
-NO_SLOT_TEXT = "No slots available in any centers"
+VFS_URL = "https://visa.vfsglobal.com/tur/en/pol/applicationdetails"
+NO_SLOT_TEXT = "No appointment slots are available in any centres for your selected sub-category"
 
 TELEGRAM_BOT_TOKEN = "8289492569:AAFE-ZHyBxwiuJ6FNocTycyNqLUHfrrU0LI"
 TELEGRAM_USER_ID = 7697893705
