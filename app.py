@@ -24,7 +24,7 @@ thread_started = False
 
 async def send_alert():
     await bot.send_message(
-        chat_id=TELEGRAM_USER_ID,
+        chat_id=7697893705,
         text=f"🟢 Visa appointment slot may be available! Check now:\n{VFS_URL}"
     )
 
