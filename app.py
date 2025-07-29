@@ -31,8 +31,15 @@ async def send_alert():
 def check_slots():
     while True:
         try:
-            print("✅ TEST ALERT — sending Telegram message")
-            asyncio.run(send_alert())   # Send alert unconditionally for testing
+            response = requests.get(VFS_URL, headers={"User-Agent": "Mozilla/5.0"})
+            soup = BeautifulSoup(response.text, "html.parser")
+            page_text = soup.get_text().lower()
+
+            if NO_SLOT_TEXT.lower() in page_text:
+                print("❌ No slots available.")
+            else:
+                print("✅ SLOT FOUND! Sending Telegram alert.")
+                asyncio.run(send_alert())
         except Exception as e:
             print("⚠️ Error:", e)
         time.sleep(CHECK_INTERVAL)
